@@ -35,7 +35,7 @@ public class OpenWithItem extends MenuItem {
         return false;
     }
 
-    @MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_OPEN_ID, name = "&Open with", group = CTX_MENU_NAVIGATOR_OPEN_GROUP_GENERAL, order = 1000)
+    @MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_OPEN_ID, name = "打开方式", group = CTX_MENU_NAVIGATOR_OPEN_GROUP_GENERAL, order = 1000)
     public static class PlaceholderItem extends MenuItem implements MenuItemProvider {
         private static final MenuItemRegistration REGISTRATION = MenuItemProvider.createRegistration(CTX_MENU_NAVIGATOR_OPEN_ID, CTX_MENU_NAVIGATOR_OPEN_GROUP_GENERAL);
 

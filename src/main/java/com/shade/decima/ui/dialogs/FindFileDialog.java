@@ -34,12 +34,12 @@ public class FindFileDialog extends JDialog {
     private final List<FileInfo> files;
 
     public FindFileDialog(@NotNull JFrame frame, @NotNull Project project) {
-        super(frame, "Find files", true);
+        super(frame, "查找文件", true);
 
         final Optional<List<FileInfo>> result;
 
         try {
-            result = ProgressDialog.showProgressDialog(frame, "Build file info index", monitor -> buildFileInfoIndex(monitor, project));
+            result = ProgressDialog.showProgressDialog(frame, "生成文件信息索引", monitor -> buildFileInfoIndex(monitor, project));
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
@@ -81,7 +81,7 @@ public class FindFileDialog extends JDialog {
             BorderFactory.createMatteBorder(1, 0, 1, 0, UIManager.getColor("Separator.foreground")),
             BorderFactory.createEmptyBorder(4, 8, 4, 8)
         ));
-        input.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Enter part of a name");
+        input.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "输入名称的一部分");
         input.putClientProperty(FlatClientProperties.TEXT_FIELD_LEADING_ICON, new FlatSearchIcon());
         input.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -168,14 +168,14 @@ public class FindFileDialog extends JDialog {
 
     @NotNull
     private List<FileInfo> buildFileInfoIndex(@NotNull ProgressMonitor monitor, @NotNull Project project) throws IOException {
-        try (var task = monitor.begin("Build file info index", 2)) {
+        try (var task = monitor.begin("生成文件信息索引", 2)) {
             final PackfileManager manager = project.getPackfileManager();
             final Map<Long, List<Packfile>> packfiles = buildFileHashToPackfilesMap(manager);
 
             final Set<Long> containing = new HashSet<>();
             final List<FileInfo> info = new ArrayList<>();
 
-            try (var ignored = task.split(1).begin("Add named entries")) {
+            try (var ignored = task.split(1).begin("添加命名条目")) {
                 try (Stream<String> files = project.listAllFiles()) {
                     files.forEach(path -> {
                         final long hash = PackfileBase.getPathHash(path);
@@ -187,11 +187,11 @@ public class FindFileDialog extends JDialog {
                 }
             }
 
-            try (var ignored = task.split(1).begin("Add unnamed entries")) {
+            try (var ignored = task.split(1).begin("添加未命名条目")) {
                 for (Packfile packfile : manager.getPackfiles()) {
                     for (PackfileBase.FileEntry entry : packfile.getFileEntries()) {
                         if (!containing.contains(entry.hash())) {
-                            info.add(new FileInfo(packfile, "<unnamed>/%8x".formatted(entry.hash()), entry.hash()));
+                            info.add(new FileInfo(packfile, "<未命名的>/%8x".formatted(entry.hash()), entry.hash()));
                         }
                     }
                 }

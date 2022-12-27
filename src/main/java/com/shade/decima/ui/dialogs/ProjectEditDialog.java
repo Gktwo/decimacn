@@ -73,7 +73,7 @@ public class ProjectEditDialog extends BaseEditDialog {
             final FileExtensionFilter filter = new FileExtensionFilter("可执行文件", "exe");
 
             final JLabel gameExecutablePathLabel = new JLabel("游戏可执行路径:");
-            gameExecutablePathLabel.setToolTipText("游戏可执行文件的路径。可能是游戏目录中唯一的.exe文件.");
+            gameExecutablePathLabel.setToolTipText("游戏可执行文件的路径,可能是游戏目录中唯一的.exe文件.");
 
             panel.add(gameExecutablePathLabel);
             panel.add(executableFilePath, "wrap");
@@ -84,7 +84,7 @@ public class ProjectEditDialog extends BaseEditDialog {
 
         {
             final JLabel archiveFolderPathLabel = new JLabel("游戏包文件文件夹路径:");
-            archiveFolderPathLabel.setToolTipText("包含游戏存档的文件夹的路径。在大多数情况下，它有一堆.bin文件.");
+            archiveFolderPathLabel.setToolTipText("包含游戏存档的文件夹的路径,在大多数情况下，它有一堆.bin文件.");
 
             panel.add(archiveFolderPathLabel);
             panel.add(archiveFolderPath, "wrap");
@@ -97,7 +97,7 @@ public class ProjectEditDialog extends BaseEditDialog {
             final FileExtensionFilter filter = new FileExtensionFilter("Oodle 库文件", "dll");
 
             final JLabel compressorPathLabel = new JLabel("Oodle 库目录:");
-            compressorPathLabel.setToolTipText("处理游戏存档数据所需的库。\n这是一个位于游戏文件夹中的.dll文件，其名称以oo2core开头.");
+            compressorPathLabel.setToolTipText("处理游戏存档数据所需的库,\n这是一个位于游戏文件夹中的.dll文件，其名称以oo2core开头.");
 
             panel.add(compressorPathLabel);
             panel.add(compressorPath, "wrap");

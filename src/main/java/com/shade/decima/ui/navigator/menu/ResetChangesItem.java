@@ -9,7 +9,7 @@ import com.shade.util.NotNull;
 
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
-@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "Reset Changes", group = CTX_MENU_NAVIGATOR_GROUP_EDIT, order = 1000)
+@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "ÖØÖÃ¸ü¸Ä", group = CTX_MENU_NAVIGATOR_GROUP_EDIT, order = 1000)
 public class ResetChangesItem extends MenuItem {
     @Override
     public void perform(@NotNull MenuItemContext ctx) {

@@ -17,7 +17,7 @@ import picocli.CommandLine.Option;
 public class ApplicationCLI {
     private static Workspace workspace;
 
-    @Option(names = {"-h", "--help"}, usageHelp = true, description = "Display this help message")
+    @Option(names = {"-h", "--help"}, usageHelp = true, description = "显示此帮助消息")
     private boolean usageHelpRequested;
 
     public static void execute(@NotNull Workspace workspace, String[] args) {

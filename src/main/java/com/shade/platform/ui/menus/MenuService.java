@@ -314,7 +314,7 @@ public class MenuService {
 
     private static class PlaceholderAction extends AbstractAction {
         public PlaceholderAction() {
-            super("<Empty>");
+            super("<¿ÕµÄ>");
             setEnabled(false);
         }
 

@@ -55,7 +55,7 @@ public record FileEditorInputLazy(@NotNull UUID container, @NotNull String packf
         if (node != null) {
             return new FileEditorInputSimple(node);
         } else {
-            throw new IllegalArgumentException("Unable to load real input");
+            throw new IllegalArgumentException("无法加载实际输入");
         }
     }
 

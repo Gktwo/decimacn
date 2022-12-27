@@ -100,7 +100,7 @@ public class Application {
         try {
             UIManager.setLookAndFeel(lafClassName);
         } catch (Exception e) {
-            log.error("Failed to setup look and feel '" + lafClassName + "'l: " + e);
+            log.error("无法设置外观 '" + lafClassName + "'l: " + e);
         }
     }
 }

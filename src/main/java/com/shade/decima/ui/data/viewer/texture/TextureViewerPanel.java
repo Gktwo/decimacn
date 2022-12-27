@@ -65,7 +65,7 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
         zoomCombo.setRenderer(new ColoredListCellRenderer<>() {
             @Override
             protected void customizeCellRenderer(@NotNull JList<? extends Float> list, @NotNull Float value, int index, boolean selected, boolean focused) {
-                append("Zoom: ", TextAttributes.GRAYED_SMALL_ATTRIBUTES);
+                append("焦距: ", TextAttributes.GRAYED_SMALL_ATTRIBUTES);
 
                 if (imagePanel.getProvider() != null) {
                     append("%d%%".formatted((int) (value * 100)), TextAttributes.REGULAR_ATTRIBUTES);
@@ -101,7 +101,7 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
         sliceCombo.setRenderer(new ColoredListCellRenderer<>() {
             @Override
             protected void customizeCellRenderer(@NotNull JList<? extends Integer> list, @NotNull Integer value, int index, boolean selected, boolean focused) {
-                append("Slice: ", TextAttributes.GRAYED_SMALL_ATTRIBUTES);
+                append("层: ", TextAttributes.GRAYED_SMALL_ATTRIBUTES);
 
                 if (imagePanel.getProvider() != null) {
                     append(String.valueOf(value), TextAttributes.REGULAR_ATTRIBUTES);
@@ -228,13 +228,13 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
 
     private class ChangeColorAction extends AbstractAction {
         public ChangeColorAction() {
-            super("Background Color", new ColorIcon(imageViewport::getBackground));
-            putValue(SHORT_DESCRIPTION, "Change viewport background color");
+            super("背景色", new ColorIcon(imageViewport::getBackground));
+            putValue(SHORT_DESCRIPTION, "更改视口背景色");
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            final Color color = JColorChooser.showDialog(TextureViewerPanel.this, "Choose background color", imageViewport.getBackground());
+            final Color color = JColorChooser.showDialog(TextureViewerPanel.this, "选择背景色", imageViewport.getBackground());
 
             if (color != null) {
                 imageViewport.setBackground(color);
@@ -244,8 +244,8 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
 
     private class ZoomInAction extends AbstractAction {
         public ZoomInAction() {
-            super("Zoom In", UIManager.getIcon("Editor.zoomInIcon"));
-            putValue(SHORT_DESCRIPTION, "Zoom image in");
+            super("放大图像", UIManager.getIcon("Editor.zoomInIcon"));
+            putValue(SHORT_DESCRIPTION, "放大图像");
         }
 
         @Override
@@ -260,8 +260,8 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
 
     private class ZoomOutAction extends AbstractAction {
         public ZoomOutAction() {
-            super("Zoom Out", UIManager.getIcon("Editor.zoomOutIcon"));
-            putValue(SHORT_DESCRIPTION, "Zoom image out");
+            super("缩小图像", UIManager.getIcon("Editor.zoomOutIcon"));
+            putValue(SHORT_DESCRIPTION, "缩小图像");
         }
 
         @Override
@@ -276,8 +276,8 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
 
     private class ZoomFitAction extends AbstractAction {
         public ZoomFitAction() {
-            super("Fit to Viewport", UIManager.getIcon("Editor.zoomFitIcon"));
-            putValue(SHORT_DESCRIPTION, "Fit image to viewport");
+            super("适应视口", UIManager.getIcon("Editor.zoomFitIcon"));
+            putValue(SHORT_DESCRIPTION, "使图像适合视口");
         }
 
         @Override
@@ -288,8 +288,8 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
 
     private class ImportImageAction extends AbstractAction {
         public ImportImageAction() {
-            super("Import Image", UIManager.getIcon("Editor.importIcon"));
-            putValue(SHORT_DESCRIPTION, "Import image");
+            super("导入图像", UIManager.getIcon("Editor.importIcon"));
+            putValue(SHORT_DESCRIPTION, "导入图像");
         }
 
         @Override
@@ -300,8 +300,8 @@ public class TextureViewerPanel extends JComponent implements PropertyChangeList
 
     private class ExportImageAction extends AbstractAction {
         public ExportImageAction() {
-            super("Export Image", UIManager.getIcon("Editor.exportIcon"));
-            putValue(SHORT_DESCRIPTION, "Export image");
+            super("导出图像", UIManager.getIcon("Editor.exportIcon"));
+            putValue(SHORT_DESCRIPTION, "导出图像");
         }
 
         @Override

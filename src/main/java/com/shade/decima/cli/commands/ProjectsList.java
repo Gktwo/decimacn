@@ -6,7 +6,7 @@ import picocli.CommandLine.Command;
 
 import java.util.StringJoiner;
 
-@Command(name = "list", description = "List all available projects")
+@Command(name = "列表", description = "列出所有可用项目")
 public class ProjectsList implements Runnable {
     @Override
     public void run() {

@@ -44,16 +44,16 @@ import static java.nio.file.StandardOpenOption.*;
 
 public class PersistChangesDialog extends BaseDialog {
     private static final CompressionLevel[] COMPRESSION_LEVELS = {
-        new CompressionLevel(Compressor.Level.NONE, "None", "Don't compress"),
-        new CompressionLevel(Compressor.Level.SUPER_FAST, "Super Fast", "Super fast mode, lower compression ratio"),
-        new CompressionLevel(Compressor.Level.VERY_FAST, "Very Fast", "Fastest mode, decent compression ratio"),
-        new CompressionLevel(Compressor.Level.FAST, "Fast", "Good for daily use"),
-        new CompressionLevel(Compressor.Level.NORMAL, "Normal", "Standard medium speed mode"),
-        new CompressionLevel(Compressor.Level.OPTIMAL_1, "Optimal", "Faster optimal compression"),
-        new CompressionLevel(Compressor.Level.OPTIMAL_2, "Optimal 2", "Recommended baseline optimal encoder"),
-        new CompressionLevel(Compressor.Level.OPTIMAL_3, "Optimal 3", "Slower optimal encoder"),
-        new CompressionLevel(Compressor.Level.OPTIMAL_4, "Optimal 4", "Very slow optimal encoder"),
-        new CompressionLevel(Compressor.Level.OPTIMAL_5, "Optimal 5", "Maximum compression, VERY slow")
+        new CompressionLevel(Compressor.Level.NONE, "无", "不压缩"),
+        new CompressionLevel(Compressor.Level.SUPER_FAST, "超快", "超快模式，较低压缩比"),
+        new CompressionLevel(Compressor.Level.VERY_FAST, "非常快", "最快模式，压缩比适中"),
+        new CompressionLevel(Compressor.Level.FAST, "快", "适合日常使用"),
+        new CompressionLevel(Compressor.Level.NORMAL, "正常的", "标准中速模式"),
+        new CompressionLevel(Compressor.Level.OPTIMAL_1, "最优的", "更快的优化压缩"),
+        new CompressionLevel(Compressor.Level.OPTIMAL_2, "最优的 2", "推荐的基线最佳编码器"),
+        new CompressionLevel(Compressor.Level.OPTIMAL_3, "最优的 3", "较慢的最佳编码器"),
+        new CompressionLevel(Compressor.Level.OPTIMAL_4, "最优的 4", "非常慢的最佳编码器"),
+        new CompressionLevel(Compressor.Level.OPTIMAL_5, "最优的 5", "最大压缩，非常慢")
     };
 
     private static final PackfileType[] PACKFILE_TYPES = {
@@ -70,21 +70,21 @@ public class PersistChangesDialog extends BaseDialog {
     private final JComboBox<PackfileType> packfileTypeCombo;
 
     public PersistChangesDialog(@NotNull NavigatorProjectNode root) {
-        super("Persist changes", List.of(BUTTON_PERSIST, BUTTON_CANCEL));
+        super("保持更改", List.of(BUTTON_PERSIST, BUTTON_CANCEL));
 
         this.root = root;
 
-        this.updateExistingPackfileButton = Mnemonic.resolve(new JRadioButton("Update &changed packfiles", null, false));
-        this.updateExistingPackfileButton.setToolTipText("Repacks only that packfiles whose files were changed.\nBig packfiles might take a significant amount of time to repack.");
+        this.updateExistingPackfileButton = Mnemonic.resolve(new JRadioButton("更新已更改的包文件", null, false));
+        this.updateExistingPackfileButton.setToolTipText("仅重新打包其文件已更改的包文件。\nBig打包文件可能需要很长时间才能重新打包.");
 
-        this.createPatchPackfileButton = Mnemonic.resolve(new JRadioButton("Collect changes into a &single packfile", null, true));
-        this.createPatchPackfileButton.setToolTipText("Creates a single packfile that contains all changes from modified packfiles.\nThis option cannot be used when changing the same file across different packfiles.");
+        this.createPatchPackfileButton = Mnemonic.resolve(new JRadioButton("将更改收集到单个数据包文件中", null, true));
+        this.createPatchPackfileButton.setToolTipText("创建一个包含修改后的包文件的所有更改的单个包文件。\n在不同的数据包文件之间更改同一文件时，不能使用此选项.");
 
-        this.createBackupCheckbox = Mnemonic.resolve(new JCheckBox("Create &backup if exists", true));
-        this.createBackupCheckbox.setToolTipText("Creates backup for every modified packfile so they can be restored later.");
+        this.createBackupCheckbox = Mnemonic.resolve(new JCheckBox("创建备份（如果存在）", true));
+        this.createBackupCheckbox.setToolTipText("为每个修改的数据包文件创建备份，以便以后可以恢复.");
 
-        this.appendIfExistsCheckbox = Mnemonic.resolve(new JCheckBox("&Append if exists", true));
-        this.appendIfExistsCheckbox.setToolTipText("If the selected packfile exists, appends changes rather than truncates it.");
+        this.appendIfExistsCheckbox = Mnemonic.resolve(new JCheckBox("如果存在则追加", true));
+        this.appendIfExistsCheckbox.setToolTipText("如果选定的数据包文件存在，则附加更改而不是截断更改.");
 
         this.compressionLevelCombo = new JComboBox<>(COMPRESSION_LEVELS);
         this.compressionLevelCombo.setSelectedItem(COMPRESSION_LEVELS[3]);
@@ -107,7 +107,7 @@ public class PersistChangesDialog extends BaseDialog {
                 append(value.name(), TextAttributes.REGULAR_ATTRIBUTES);
 
                 if (!value.games().contains(root.getProjectContainer().getType())) {
-                    append(" Incompatible with " + root.getProjectContainer().getType(), CommonTextAttributes.IDENTIFIER_ATTRIBUTES.smaller());
+                    append(" 不兼容与 " + root.getProjectContainer().getType(), CommonTextAttributes.IDENTIFIER_ATTRIBUTES.smaller());
                 }
             }
         });

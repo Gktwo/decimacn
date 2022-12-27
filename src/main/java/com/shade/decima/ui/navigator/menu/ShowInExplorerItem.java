@@ -15,7 +15,7 @@ import java.nio.file.Path;
 
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
-@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "Show in Explorer", group = CTX_MENU_NAVIGATOR_GROUP_GENERAL, order = 1000)
+@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "在资源管理器中显示", group = CTX_MENU_NAVIGATOR_GROUP_GENERAL, order = 1000)
 public class ShowInExplorerItem extends MenuItem {
     @Override
     public void perform(@NotNull MenuItemContext ctx) {

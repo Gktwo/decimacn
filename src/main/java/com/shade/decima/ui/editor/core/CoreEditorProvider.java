@@ -29,7 +29,7 @@ public class CoreEditorProvider implements EditorProvider {
     @NotNull
     @Override
     public String getName() {
-        return "Core Editor";
+        return "Core ±à¼­Æ÷";
     }
 
     @Nullable

@@ -24,7 +24,7 @@ public class BinaryEditorProvider implements EditorProvider {
     @NotNull
     @Override
     public String getName() {
-        return "Binary Editor";
+        return "¶þ½øÖÆ±à¼­Æ÷";
     }
 
     @Nullable

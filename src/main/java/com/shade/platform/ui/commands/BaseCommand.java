@@ -13,7 +13,7 @@ public abstract class BaseCommand implements Command {
     @Override
     public void redo() {
         if (state == State.DID) {
-            throw new IllegalStateException("Can't redo");
+            throw new IllegalStateException("无法恢复");
         }
 
         state = State.DID;
@@ -22,7 +22,7 @@ public abstract class BaseCommand implements Command {
     @Override
     public void undo() {
         if (state == State.UNDID) {
-            throw new IllegalStateException("Can't undo");
+            throw new IllegalStateException("无法撤销");
         }
 
         state = State.UNDID;

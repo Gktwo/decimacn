@@ -30,9 +30,9 @@ public class CloseAllEditorsItem extends MenuItem {
         final EditorManager manager = ctx.getData(PlatformDataKeys.EDITOR_MANAGER_KEY);
 
         if (manager.getStacksCount() > 1) {
-            return "Close &Grouped Tabs";
+            return "关闭分组选项卡";
         } else {
-            return "Close &All Tabs";
+            return "关闭所有选项卡";
         }
     }
 }

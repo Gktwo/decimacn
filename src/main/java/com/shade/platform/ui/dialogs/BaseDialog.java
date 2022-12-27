@@ -14,10 +14,10 @@ import java.util.Objects;
 public abstract class BaseDialog implements ActionListener {
     public static final DataKey<ButtonDescriptor> DESCRIPTOR_KEY = new DataKey<>("descriptor", ButtonDescriptor.class);
 
-    public static final ButtonDescriptor BUTTON_OK = new ButtonDescriptor("ok", "OK", "ok");
-    public static final ButtonDescriptor BUTTON_CANCEL = new ButtonDescriptor("cancel", "Cancel", "cancel");
-    public static final ButtonDescriptor BUTTON_PERSIST = new ButtonDescriptor("ok", "Persist", null);
-    public static final ButtonDescriptor BUTTON_SAVE = new ButtonDescriptor("ok", "Save", null);
+    public static final ButtonDescriptor BUTTON_OK = new ButtonDescriptor("ok", "确定", "ok");
+    public static final ButtonDescriptor BUTTON_CANCEL = new ButtonDescriptor("cancel", "取消", "cancel");
+    public static final ButtonDescriptor BUTTON_PERSIST = new ButtonDescriptor("ok", "保持", null);
+    public static final ButtonDescriptor BUTTON_SAVE = new ButtonDescriptor("ok", "保存", null);
 
     protected final String title;
     protected final List<ButtonDescriptor> buttons;

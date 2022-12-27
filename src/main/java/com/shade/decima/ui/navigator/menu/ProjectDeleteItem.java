@@ -15,7 +15,7 @@ import javax.swing.*;
 
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
-@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "Delete Project", group = CTX_MENU_NAVIGATOR_GROUP_PROJECT, order = 3000)
+@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "É¾³ýÏîÄ¿", group = CTX_MENU_NAVIGATOR_GROUP_PROJECT, order = 3000)
 public class ProjectDeleteItem extends MenuItem {
     @Override
     public void perform(@NotNull MenuItemContext ctx) {

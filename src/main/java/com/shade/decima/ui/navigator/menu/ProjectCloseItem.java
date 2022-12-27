@@ -24,7 +24,7 @@ import javax.swing.*;
 
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
-@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "Close Project", group = CTX_MENU_NAVIGATOR_GROUP_PROJECT, order = 1000)
+@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "关闭项目", group = CTX_MENU_NAVIGATOR_GROUP_PROJECT, order = 1000)
 public class ProjectCloseItem extends MenuItem {
     @Override
     public void perform(@NotNull MenuItemContext ctx) {
@@ -50,8 +50,8 @@ public class ProjectCloseItem extends MenuItem {
         if (isProjectDirty(project, manager)) {
             final int result = JOptionPane.showConfirmDialog(
                 Application.getFrame(),
-                "Do you want to save changes to project '%s'?".formatted(project.getContainer().getName()),
-                "Confirm Close",
+                "是否要保存对项目的更改 '%s'?".formatted(project.getContainer().getName()),
+                "确认关闭",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.WARNING_MESSAGE
             );

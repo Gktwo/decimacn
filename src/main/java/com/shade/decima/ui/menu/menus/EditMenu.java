@@ -41,9 +41,9 @@ public interface EditMenu {
         public String getName(@NotNull MenuItemContext ctx) {
             final CommandManager manager = findActiveCommandManager();
             if (manager != null && manager.canUndo()) {
-                return "&Undo %s".formatted(manager.getUndoTitle());
+                return "&³·Ïú %s".formatted(manager.getUndoTitle());
             } else {
-                return "&Undo";
+                return "&³·Ïú";
             }
         }
     }
@@ -74,9 +74,9 @@ public interface EditMenu {
         public String getName(@NotNull MenuItemContext ctx) {
             final CommandManager manager = findActiveCommandManager();
             if (manager != null && manager.canRedo()) {
-                return "&Redo %s".formatted(manager.getRedoTitle());
+                return "&»Ö¸´ %s".formatted(manager.getRedoTitle());
             } else {
-                return "&Redo";
+                return "&»Ö¸´";
             }
         }
     }

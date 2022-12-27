@@ -28,7 +28,7 @@ public interface HelpMenu {
             <tr><td><b>Version:</b></td><td>{1} (Built on {2,date,short}), commit: <a href="https://github.com/ShadelessFox/decima/commit/{3}">{3}</a></tr>
             <tr><td><b>VM Version:</b></td><td>{4}; {5} ({6} {7})</td></tr>
             <tr><td><b>VM Vendor:</b></td><td>{8}, <a href="{9}">{9}</a></td></tr>
-            <tr><td><b>中文翻译:</b></td><td>@gktwo,  <a href="https://github.com/gktwo/">https://github.com/gktwo/</a></tr> 
+            <tr><td><b>language zh-cn:</b></td><td>@gktwo,  <a href="https://github.com/Gktwo/decimacn/">https://github.com/Gktwo/decimacn/</a></tr> 
             <br> 
              </table>
             <tr><td><b>查看更多信息</b> <a href="https://github.com/ShadelessFox/decima">https://github.com/ShadelessFox/decima</a> </tr>  

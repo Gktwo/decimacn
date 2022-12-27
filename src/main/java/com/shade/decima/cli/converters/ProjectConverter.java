@@ -23,6 +23,6 @@ public class ProjectConverter implements ITypeConverter<Project> {
             }
         }
 
-        throw new IllegalArgumentException("Can't find project '" + value + "'");
+        throw new IllegalArgumentException("找不到项目 '" + value + "'");
     }
 }

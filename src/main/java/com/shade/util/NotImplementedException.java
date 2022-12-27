@@ -2,7 +2,7 @@ package com.shade.util;
 
 public class NotImplementedException extends RuntimeException {
     public NotImplementedException() {
-        super("Method " + getCallingMethod() + " is not implemented");
+        super("方法 " + getCallingMethod() + " 未实现");
     }
 
     @NotNull
