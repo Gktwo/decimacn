@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\com",
+    "\\src\\main\\java\\com\\shade",
+    "\\src\\main\\java\\com\\shade\\decima",
+    "\\src\\main\\java\\com\\shade\\decima\\cli",
+    "\\src\\main\\java\\com\\shade\\decima\\model",
+    "\\src\\main\\java\\com\\shade\\decima\\model\\app"
   ],
+  "SelectedNode": "\\src\\main\\java\\com\\shade\\decima\\model\\app\\Project.java",
   "PreviewInSolutionExplorer": false
 }
