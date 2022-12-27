@@ -81,7 +81,7 @@ public interface EditMenu {
         }
     }
 
-    @MenuItemRegistration(parent = APP_MENU_EDIT_ID, name = "Find &Files\u2026", icon = "Editor.searchIcon", keystroke = "ctrl shift F", group = APP_MENU_EDIT_GROUP_GENERAL, order = 1000)
+    @MenuItemRegistration(parent = APP_MENU_EDIT_ID, name = "ËÑË÷ &ÎÄ¼þ\u2026", icon = "Editor.searchIcon", keystroke = "ctrl shift F", group = APP_MENU_EDIT_GROUP_GENERAL, order = 1000)
     class FindFilesItem extends MenuItem {
         @Override
         public void perform(@NotNull MenuItemContext ctx) {

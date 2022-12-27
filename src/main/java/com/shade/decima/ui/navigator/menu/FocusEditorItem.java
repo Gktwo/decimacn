@@ -9,7 +9,7 @@ import com.shade.util.NotNull;
 
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
-@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "Focus Editor", keystroke = "ESCAPE", group = CTX_MENU_NAVIGATOR_GROUP_GENERAL, order = 0)
+@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, name = "½¹µã±à¼­Æ÷", keystroke = "ESCAPE", group = CTX_MENU_NAVIGATOR_GROUP_GENERAL, order = 0)
 public class FocusEditorItem extends MenuItem {
     @Override
     public void perform(@NotNull MenuItemContext ctx) {

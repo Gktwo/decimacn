@@ -25,17 +25,17 @@ import java.util.stream.Stream;
 
 import static java.nio.file.StandardOpenOption.*;
 
-@Command(name = "paths", description = "Dumps all valid file paths from packfiles of the selected project", sortOptions = false)
+@Command(name = "路径", description = "转储所选项目的数据包文件中的所有有效文件路径", sortOptions = false)
 public class DumpFilePaths implements Runnable {
     private static final Logger log = LoggerFactory.getLogger(DumpFilePaths.class);
 
     private static final String[] VALID_MOUNT_PREFIXES = {"appdir:", "cache:", "source:", "work:"};
     private static final String[] VALID_FILE_EXTENSIONS = {".core", ".stream", ".core.stream", ".streaming.core", ".coretext", ".coredebug", ".dep"};
 
-    @Option(names = {"-p", "--project"}, required = true, description = "The project to dump from")
+    @Option(names = {"-p", "--project"}, required = true, description = "转储项目从")
     private Project project;
 
-    @Option(names = {"-o", "--output"}, required = true, description = "The output file")
+    @Option(names = {"-o", "--output"}, required = true, description = "输出文件")
     private Path output;
 
     @Override
@@ -103,7 +103,7 @@ public class DumpFilePaths implements Runnable {
         try {
             Files.write(output, paths, WRITE, CREATE, TRUNCATE_EXISTING);
         } catch (IOException e) {
-            throw new UncheckedIOException("Error writing strings to the output file", e);
+            throw new UncheckedIOException("将字符串写入输出文件时出错", e);
         }
     }
 

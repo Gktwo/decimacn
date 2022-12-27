@@ -24,15 +24,15 @@ import java.util.UUID;
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
 public interface FileMenu {
-    @MenuItemRegistration(id = APP_MENU_FILE_NEW_ID, parent = APP_MENU_FILE_ID, name = "&New", group = APP_MENU_FILE_GROUP_OPEN, order = 1000)
+    @MenuItemRegistration(id = APP_MENU_FILE_NEW_ID, parent = APP_MENU_FILE_ID, name = "&打开新的", group = APP_MENU_FILE_GROUP_OPEN, order = 1000)
     class NewItem extends MenuItem {}
 
-    @MenuItemRegistration(parent = APP_MENU_FILE_NEW_ID, name = "&Project\u2026", group = APP_MENU_FILE_GROUP_OPEN, order = 1000)
+    @MenuItemRegistration(parent = APP_MENU_FILE_NEW_ID, name = "&项目\u2026", group = APP_MENU_FILE_GROUP_OPEN, order = 1000)
     class NewProjectItem extends MenuItem {
         @Override
         public void perform(@NotNull MenuItemContext ctx) {
             final ProjectEditDialog dialog = new ProjectEditDialog(false);
-            final ProjectContainer container = new ProjectContainer(UUID.randomUUID(), "New project", GameType.DS, Path.of(""), Path.of(""), Path.of(""), Path.of(""), Path.of(""), Path.of(""));
+            final ProjectContainer container = new ProjectContainer(UUID.randomUUID(), "新项目", GameType.DS, Path.of(""), Path.of(""), Path.of(""), Path.of(""), Path.of(""), Path.of(""));
 
             dialog.load(container);
 
@@ -44,7 +44,7 @@ public interface FileMenu {
         }
     }
 
-    @MenuItemRegistration(parent = APP_MENU_FILE_ID, name = "&Save", icon = "Editor.saveIcon", keystroke = "ctrl S", group = APP_MENU_FILE_GROUP_SAVE, order = 1000)
+    @MenuItemRegistration(parent = APP_MENU_FILE_ID, name = "&保存", icon = "Editor.saveIcon", keystroke = "ctrl S", group = APP_MENU_FILE_GROUP_SAVE, order = 1000)
     class SaveItem extends MenuItem {
         @Override
         public void perform(@NotNull MenuItemContext ctx) {
@@ -71,7 +71,7 @@ public interface FileMenu {
         }
     }
 
-    @MenuItemRegistration(parent = APP_MENU_FILE_ID, name = "Re&pack", icon = "Editor.packIcon", keystroke = "ctrl P", group = APP_MENU_FILE_GROUP_SAVE, order = 2000)
+    @MenuItemRegistration(parent = APP_MENU_FILE_ID, name = "打包", icon = "Editor.packIcon", keystroke = "ctrl P", group = APP_MENU_FILE_GROUP_SAVE, order = 2000)
     class RepackItem extends MenuItem {
         @Override
         public void perform(@NotNull MenuItemContext ctx) {
@@ -90,7 +90,7 @@ public interface FileMenu {
         }
     }
 
-    @MenuItemRegistration(parent = APP_MENU_FILE_ID, name = "E&xit", keystroke = "ctrl Q", group = APP_MENU_FILE_GROUP_EXIT, order = 1000)
+    @MenuItemRegistration(parent = APP_MENU_FILE_ID, name = "退出", keystroke = "ctrl Q", group = APP_MENU_FILE_GROUP_EXIT, order = 1000)
     class ExitItem extends MenuItem {
         @Override
         public void perform(@NotNull MenuItemContext ctx) {

@@ -18,7 +18,7 @@ import java.util.prefs.Preferences;
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
 public interface ViewMenu {
-    @MenuItemRegistration(parent = APP_MENU_VIEW_ID, id = APP_MENU_VIEW_THEME_ID, name = "&Theme", group = APP_MENU_VIEW_GROUP_GENERAL, order = 1000)
+    @MenuItemRegistration(parent = APP_MENU_VIEW_ID, id = APP_MENU_VIEW_THEME_ID, name = "&主题", group = APP_MENU_VIEW_GROUP_GENERAL, order = 1000)
     class ThemeItem extends MenuItem {}
 
     @MenuItemRegistration(parent = APP_MENU_VIEW_THEME_ID, group = APP_MENU_VIEW_THEME_GROUP_GENERAL, order = 1000)
@@ -26,8 +26,8 @@ public interface ViewMenu {
         private static final MenuItemRegistration REGISTRATION = MenuItemProvider.createRegistration(APP_MENU_VIEW_THEME_ID, APP_MENU_VIEW_THEME_GROUP_GENERAL);
 
         private static final List<ThemeInfo> THEMES = List.of(
-            new ThemeInfo("Light", FlatLightLaf.class.getName()),
-            new ThemeInfo("Dark", FlatDarkLaf.class.getName())
+            new ThemeInfo("白", FlatLightLaf.class.getName()),
+            new ThemeInfo("暗", FlatDarkLaf.class.getName())
         );
 
         @NotNull
@@ -52,8 +52,8 @@ public interface ViewMenu {
 
             JOptionPane.showMessageDialog(
                 Application.getFrame(),
-                "The theme will change upon application restart.",
-                "Theme Change",
+                "主题将在应用程序重新启动时更改.",
+                "主题更改",
                 JOptionPane.INFORMATION_MESSAGE);
         }
 

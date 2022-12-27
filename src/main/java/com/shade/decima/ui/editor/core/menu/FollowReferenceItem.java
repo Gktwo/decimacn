@@ -24,7 +24,7 @@ import java.util.concurrent.CompletableFuture;
 
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
-@MenuItemRegistration(parent = CTX_MENU_CORE_EDITOR_ID, name = "Follow Reference", keystroke = "F4", group = CTX_MENU_CORE_EDITOR_GROUP_GENERAL, order = 1000)
+@MenuItemRegistration(parent = CTX_MENU_CORE_EDITOR_ID, name = "×ñÑ­²Î¿¼", keystroke = "F4", group = CTX_MENU_CORE_EDITOR_GROUP_GENERAL, order = 1000)
 public class FollowReferenceItem extends MenuItem {
     @Override
     public void perform(@NotNull MenuItemContext ctx) {

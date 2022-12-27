@@ -18,19 +18,21 @@ import java.util.Properties;
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
 public interface HelpMenu {
-    @MenuItemRegistration(parent = APP_MENU_HELP_ID, name = "&About", group = APP_MENU_HELP_GROUP_ABOUT, order = 1000)
+    @MenuItemRegistration(parent = APP_MENU_HELP_ID, name = "&关于", group = APP_MENU_HELP_GROUP_ABOUT, order = 1000)
     class AboutItem extends MenuItem {
         private static final MessageFormat MESSAGE = new MessageFormat("""
             <h1>{0}</h1>
-            A tool for viewing and editing data in games powered by Decima engine.
+           Decima引擎支持的游戏中查看和编辑数据的工具.
             <br><br>
             <table>
             <tr><td><b>Version:</b></td><td>{1} (Built on {2,date,short}), commit: <a href="https://github.com/ShadelessFox/decima/commit/{3}">{3}</a></tr>
             <tr><td><b>VM Version:</b></td><td>{4}; {5} ({6} {7})</td></tr>
             <tr><td><b>VM Vendor:</b></td><td>{8}, <a href="{9}">{9}</a></td></tr>
-            </table>
-            <br>
-            See <a href="https://github.com/ShadelessFox/decima">https://github.com/ShadelessFox/decima</a> for more information.
+            <tr><td><b>中文翻译:</b></td><td>@gktwo,  <a href="https://github.com/gktwo/">https://github.com/gktwo/</a></tr> 
+            <br> 
+             </table>
+            <tr><td><b>查看更多信息</b> <a href="https://github.com/ShadelessFox/decima">https://github.com/ShadelessFox/decima</a> </tr>  
+            
             """);
 
         @Override

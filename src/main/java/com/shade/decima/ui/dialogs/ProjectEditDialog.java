@@ -29,7 +29,7 @@ public class ProjectEditDialog extends BaseEditDialog {
     private final JTextField fileListingsPath;
 
     public ProjectEditDialog(boolean edit) {
-        super(edit ? "Edit Project" : "New Project");
+        super(edit ? "编辑项目" : "新项目");
 
         this.edit = edit;
 
@@ -52,57 +52,57 @@ public class ProjectEditDialog extends BaseEditDialog {
         panel.setLayout(new MigLayout("insets 0", "[fill][grow,fill,250lp]", ""));
 
         if (edit) {
-            panel.add(new JLabel("Project UUID:"));
+            panel.add(new JLabel("项目 UUID:"));
             panel.add(projectUuid, "wrap");
             panel.add(new JSeparator(), "wrap,span");
         }
 
         {
-            panel.add(new JLabel("Project name:"));
+            panel.add(new JLabel("项目名称:"));
             panel.add(projectName, "wrap");
 
             UIUtils.installInputValidator(projectName, new NotEmptyValidator(projectName), this);
         }
 
         {
-            panel.add(new JLabel("Project type:"));
+            panel.add(new JLabel("项目类型:"));
             panel.add(projectType, "wrap");
         }
 
         {
-            final FileExtensionFilter filter = new FileExtensionFilter("Executable File", "exe");
+            final FileExtensionFilter filter = new FileExtensionFilter("可执行文件", "exe");
 
-            final JLabel gameExecutablePathLabel = new JLabel("Game executable path:");
-            gameExecutablePathLabel.setToolTipText("Path to a game's executable. Likely to be the only .exe file in the game's directory.");
+            final JLabel gameExecutablePathLabel = new JLabel("游戏可执行路径:");
+            gameExecutablePathLabel.setToolTipText("游戏可执行文件的路径。可能是游戏目录中唯一的.exe文件.");
 
             panel.add(gameExecutablePathLabel);
             panel.add(executableFilePath, "wrap");
 
-            UIUtils.addOpenFileAction(executableFilePath, "Select game executable", filter);
+            UIUtils.addOpenFileAction(executableFilePath, "选择游戏可执行文件", filter);
             UIUtils.installInputValidator(executableFilePath, new ExistingFileValidator(executableFilePath, filter), this);
         }
 
         {
-            final JLabel archiveFolderPathLabel = new JLabel("Game packfile folder path:");
-            archiveFolderPathLabel.setToolTipText("Path to a folder with game archives. In most cases it has a bunch of .bin files in it.");
+            final JLabel archiveFolderPathLabel = new JLabel("游戏包文件文件夹路径:");
+            archiveFolderPathLabel.setToolTipText("包含游戏存档的文件夹的路径。在大多数情况下，它有一堆.bin文件.");
 
             panel.add(archiveFolderPathLabel);
             panel.add(archiveFolderPath, "wrap");
 
-            UIUtils.addOpenDirectoryAction(archiveFolderPath, "Select folder containing game archives");
+            UIUtils.addOpenDirectoryAction(archiveFolderPath, "选择包含游戏存档的文件夹");
             UIUtils.installInputValidator(archiveFolderPath, new ExistingFileValidator(archiveFolderPath, null), this);
         }
 
         {
-            final FileExtensionFilter filter = new FileExtensionFilter("Oodle Library File", "dll");
+            final FileExtensionFilter filter = new FileExtensionFilter("Oodle 库文件", "dll");
 
-            final JLabel compressorPathLabel = new JLabel("Oodle library path:");
-            compressorPathLabel.setToolTipText("A library required for working with data from game archives.\nIt's a .dll file located in the game's folder and has name that starts with oo2core.");
+            final JLabel compressorPathLabel = new JLabel("Oodle 库目录:");
+            compressorPathLabel.setToolTipText("处理游戏存档数据所需的库。\n这是一个位于游戏文件夹中的.dll文件，其名称以oo2core开头.");
 
             panel.add(compressorPathLabel);
             panel.add(compressorPath, "wrap");
 
-            UIUtils.addOpenFileAction(compressorPath, "Select Oodle library", filter);
+            UIUtils.addOpenFileAction(compressorPath, "选择Oodle库", filter);
             UIUtils.installInputValidator(compressorPath, new ExistingFileValidator(compressorPath, filter), this);
         }
 
@@ -110,34 +110,34 @@ public class ProjectEditDialog extends BaseEditDialog {
         panel.add(new JSeparator(), "wrap,span");
 
         {
-            final FileExtensionFilter filter = new FileExtensionFilter("RTTI information", "json", "json.gz");
+            final FileExtensionFilter filter = new FileExtensionFilter("RTTI信息", "json", "json.gz");
 
-            panel.add(new JLabel("RTTI metadata path:"));
+            panel.add(new JLabel("RTTI metadata 目录:"));
             panel.add(rttiInfoFilePath, "wrap");
 
-            UIUtils.addOpenFileAction(rttiInfoFilePath, "Select RTTI information file", filter);
+            UIUtils.addOpenFileAction(rttiInfoFilePath, "选择 RTTI信息 文件", filter);
             UIUtils.installInputValidator(rttiInfoFilePath, new ExistingFileValidator(rttiInfoFilePath, filter), this);
         }
 
         {
-            final FileExtensionFilter filter = new FileExtensionFilter("Archive information", "json", "json.gz");
+            final FileExtensionFilter filter = new FileExtensionFilter("archive信息", "json", "json.gz");
 
-            final JLabel label = new JLabel("Packfile metadata path:");
+            final JLabel label = new JLabel("程序包文件 metadata path:");
             panel.add(label);
             panel.add(archiveInfoFilePath, "wrap");
 
-            UIUtils.addOpenFileAction(archiveInfoFilePath, "Select archive information file", filter);
+            UIUtils.addOpenFileAction(archiveInfoFilePath, "选择archive信息文件", filter);
             UIUtils.installInputValidator(archiveInfoFilePath, new ExistingFileValidator(archiveInfoFilePath, filter, false), this);
         }
 
         {
-            final FileExtensionFilter filter = new FileExtensionFilter("File listings", "txt", "txt.gz");
+            final FileExtensionFilter filter = new FileExtensionFilter("文件列表", "txt", "txt.gz");
 
-            final JLabel label = new JLabel("File listings path:");
+            final JLabel label = new JLabel("文件列表路径:");
             panel.add(label);
             panel.add(fileListingsPath, "wrap");
 
-            UIUtils.addOpenFileAction(fileListingsPath, "Select file containing file listings", filter);
+            UIUtils.addOpenFileAction(fileListingsPath, "选择包含文件列表的文件", filter);
             UIUtils.installInputValidator(fileListingsPath, new ExistingFileValidator(fileListingsPath, filter, false), this);
         }
 

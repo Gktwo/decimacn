@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 
 import static com.shade.decima.ui.menu.MenuConstants.*;
 
-@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, id = CTX_MENU_NAVIGATOR_OPEN_ID, name = "&Open with", group = CTX_MENU_NAVIGATOR_GROUP_OPEN, order = 1000)
+@MenuItemRegistration(parent = CTX_MENU_NAVIGATOR_ID, id = CTX_MENU_NAVIGATOR_OPEN_ID, name = "打开方式", group = CTX_MENU_NAVIGATOR_GROUP_OPEN, order = 1000)
 public class OpenWithItem extends MenuItem {
     @Override
     public boolean isVisible(@NotNull MenuItemContext ctx) {
